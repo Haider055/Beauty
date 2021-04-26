@@ -115,7 +115,6 @@ public class fashionpage extends Fragment {
         recyclertopbrand.setAdapter(adapter_fashion_topbrand);
 //buildlook
 
-
         recyclerbuildlook=view.findViewById(R.id.buildlookrecycler);
         recyclerbuildlook.hasFixedSize();
 
