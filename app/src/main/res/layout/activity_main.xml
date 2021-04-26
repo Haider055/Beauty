@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#d4e3ce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/backgroundoflogin"
+                    app:civ_border_color="#000"
+                    app:civ_border_width="2dp" />
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="6dp"
+                    android:src="@drawable/ic_online" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/home"
+                android:id="@+id/title"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_baseline_searchblack_24"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:layout_width="25dp"
+                android:id="@+id/search"
+                android:layout_height="25dp">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:src="@drawable/shoppingbag"
+                android:layout_width="20dp"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/search"
+                android:layout_height="20dp">
+
+            </ImageView>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_above="@id/bottom_nav_view"
+        android:id="@+id/frame"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <com.zagori.bottomnavbar.BottomNavBar
+
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+
+        app:bn_item_color="#ffffff"
+        app:bn_menu="@menu/bottom_nav_menu"
+
+        app:bn_curve_vertical_offset="0dp"
+        app:bn_curve_margin="12dp"
+        app:bn_background_color="@color/color_bottom_nav"
+        app:bn_fab_background_color="@color/white"
+        app:bn_curve_rounded_corner_radius="8dp"
+        app:bn_fab_size="normal"
+        app:bn_fab_menu_index="2"
+        app:bn_fab_icon_color="@color/color_bottom_nav">
+
+    </com.zagori.bottomnavbar.BottomNavBar>
+
+<!--    <com.etebarian.meowbottomnavigation.MeowBottomNavigation-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/bottom_nav_view"-->
+<!--        app:mbn_circleColor="#ffffff"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        app:mbn_backgroundBottomColor="#ffffff"-->
+<!--        app:mbn_countBackgroundColor="#ff6f00"-->
+<!--        app:mbn_countTextColor="#ffffff"-->
+<!--        app:mbn_defaultIconColor="#90a4ae"-->
+<!--        app:mbn_rippleColor="#2f424242"-->
+<!--        app:mbn_selectedIconColor="#3c415e"-->
+<!--        app:mbn_shadowColor="#1f212121"/>-->
+
+
+</RelativeLayout>

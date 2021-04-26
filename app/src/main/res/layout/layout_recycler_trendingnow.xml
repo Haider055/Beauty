@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:background="#ffffff"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:scaleType="fitXY"
+        android:src="@drawable/tipoftheday"
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+    </ImageView>
+
+    <TextView
+        android:layout_margin="4dp"
+        android:text="zandu"
+        android:id="@+id/title"
+        android:textSize="15dp"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:id="@+id/price"
+        android:text="From 200"
+        android:textSize="17dp"
+        android:textColor="#5e875f"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+</LinearLayout>
