@@ -37,7 +37,7 @@ public class adapter_blogs extends RecyclerView.Adapter<adapter_blogs.holder> {
 
         Glide.with(context).load(list.get(position).getImage()).into(holder.imageView);
         holder.title.setText("8 causes");
-        holder.desc.setText("description");
+        holder.desc.setText("description ");
         holder.date.setText("1 april 2021");
         holder.answer.setText("dermatologists answers");
         holder.drname.setText("dr ali");

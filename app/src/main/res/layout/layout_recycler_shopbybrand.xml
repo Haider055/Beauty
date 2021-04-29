@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="12dp"
-    android:backgroundTint="#c27fff"
+    android:id="@+id/card"
     android:layout_margin="8dp"
     android:layout_height="wrap_content">
 
@@ -16,14 +16,14 @@
             app:cardCornerRadius="12dp"
             android:layout_margin="4dp"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="130dp">
 
             <ImageView
                 android:id="@+id/image"
                 android:src="@drawable/facecare"
                 android:scaleType="fitXY"
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="130dp">
 
             </ImageView>
 

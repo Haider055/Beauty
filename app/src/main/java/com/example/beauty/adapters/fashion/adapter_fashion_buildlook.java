@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beauty.R;
@@ -33,7 +34,19 @@ public class adapter_fashion_buildlook extends RecyclerView.Adapter<adapter_fash
 
     @Override
     public void onBindViewHolder(@NonNull adapter_fashion_buildlook.holder holder, int position) {
+        if (position%2!=0){
+            ViewGroup.MarginLayoutParams layoutParams =
+                    (ViewGroup.MarginLayoutParams) holder.cardView.getLayoutParams();
+            layoutParams.setMargins(10, 140, 0, 0);
+            holder.cardView.requestLayout();
+        }
+        else {
+            ViewGroup.MarginLayoutParams layoutParams =
+                    (ViewGroup.MarginLayoutParams) holder.cardView.getLayoutParams();
+            layoutParams.setMargins(0, 60, 20, 70);
+            holder.cardView.requestLayout();
 
+        }
     }
 
     @Override
@@ -46,8 +59,12 @@ public class adapter_fashion_buildlook extends RecyclerView.Adapter<adapter_fash
         ImageView imageView;
         TextView title;
 
+        CardView cardView;
+
         public holder(@NonNull View itemView) {
             super(itemView);
+
+            cardView=itemView.findViewById(R.id.card);
 
             imageView=itemView.findViewById(R.id.image);
             title=itemView.findViewById(R.id.title);

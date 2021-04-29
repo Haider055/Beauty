@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.beauty.R;
+import com.example.beauty.adapters.home.adapter_posts;
 import com.example.beauty.adapters.home.adapter_trendingnow;
 import com.example.beauty.adapters.home.adapter_videos;
 import com.example.beauty.adapters.home.adapter_blogs;
@@ -23,6 +24,7 @@ import com.example.beauty.adapters.home.adapter_story_recycler;
 import com.example.beauty.adapters.home.adapter_tipsbycategory;
 import com.example.beauty.models.home.model_blogs;
 import com.example.beauty.models.home.model_goals;
+import com.example.beauty.models.home.model_post;
 import com.example.beauty.models.home.model_shopbybrand;
 import com.example.beauty.models.home.model_slider;
 import com.example.beauty.models.home.model_story_recycler;
@@ -45,6 +47,10 @@ public class homepage extends Fragment {
     RecyclerView recyclergoals;
     adapter_goals adapter_goals;
     List<model_goals> listgoals;
+
+    RecyclerView recyclerpostproducts;
+    adapter_posts adapter_postsproducts;
+    List<model_post> listpost;
 
 
     RecyclerView recyclershopbybrand;
@@ -223,6 +229,23 @@ public class homepage extends Fragment {
         adapter_trendingnow=new adapter_trendingnow(listtrending,getContext());
         recyclertrendingnow.setAdapter(adapter_trendingnow);
 
+//postproducts
+
+        recyclerpostproducts=view.findViewById(R.id.postproductsrecycler);
+        recyclerpostproducts.hasFixedSize();
+
+        listpost=new ArrayList<>();
+
+        listpost.add(new model_post("https://picsum.photos/seed/picsum/200/300"));
+        listpost.add(new model_post("https://picsum.photos/seed/picsum/200/300"));
+        listpost.add(new model_post("https://picsum.photos/seed/picsum/200/300"));
+        listpost.add(new model_post("https://picsum.photos/seed/picsum/200/300"));
+        listpost.add(new model_post("https://picsum.photos/seed/picsum/200/300"));
+        listpost.add(new model_post("https://picsum.photos/seed/picsum/200/300"));
+
+        recyclerpostproducts.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        adapter_postsproducts=new adapter_posts(listpost,getContext());
+        recyclerpostproducts.setAdapter(adapter_postsproducts);
 
         return view;
     }

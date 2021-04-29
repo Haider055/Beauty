@@ -1,6 +1,7 @@
 package com.example.beauty.adapters.home;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -36,6 +38,19 @@ public class adapter_tipsbycategory extends RecyclerView.Adapter<adapter_tipsbyc
     @Override
     public void onBindViewHolder(@NonNull adapter_tipsbycategory.holder holder, int position) {
 
+        if (position%4==0){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#fc977b"));
+        }
+        else if (position%4==1){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#fabd03"));
+        }
+        else if (position%4==2){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#c27fff"));
+        }
+        else {
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#48d2d2"));
+        }
+
         Glide.with(context).load(list.get(position).getImage()).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.image);
         holder.textView.setText(list.get(position).getName());
     }
@@ -49,9 +64,12 @@ public class adapter_tipsbycategory extends RecyclerView.Adapter<adapter_tipsbyc
 
         ImageView image;
         TextView textView;
+        CardView cardView;
 
         public holder(@NonNull View itemView) {
             super(itemView);
+
+            cardView=itemView.findViewById(R.id.card);
 
             image=itemView.findViewById(R.id.image);
             textView=itemView.findViewById(R.id.name);

@@ -14,10 +14,14 @@ import android.view.ViewGroup;
 
 import com.example.beauty.R;
 import com.example.beauty.adapters.fashion.adapter_fashion_buildlook;
+import com.example.beauty.adapters.fashion.adapter_fashion_buildlook2;
+import com.example.beauty.adapters.fashion.adapter_fashion_post;
 import com.example.beauty.adapters.fashion.adapter_fashion_slider;
 import com.example.beauty.adapters.fashion.adapter_fashion_topbrand;
 import com.example.beauty.adapters.fashion.adapter_fashion_videos;
 import com.example.beauty.models.fashion.model_fashion_buildlook;
+import com.example.beauty.models.fashion.model_fashion_buildlook2;
+import com.example.beauty.models.fashion.model_fashion_post;
 import com.example.beauty.models.fashion.model_fashion_slider;
 import com.example.beauty.models.fashion.model_fashion_topbrand;
 import com.example.beauty.models.fashion.model_fashion_video;
@@ -42,10 +46,18 @@ public class fashionpage extends Fragment {
     adapter_fashion_videos adapter_videos;
     List<model_fashion_video> listvideos;
 
+    RecyclerView recyclerpostproducts;
+    adapter_fashion_post adapter_fashion_post;
+    List<model_fashion_post> listfashionPost;
 
     RecyclerView recyclerbuildlook;
     adapter_fashion_buildlook adapter_fashion_buildlook;
     List<model_fashion_buildlook> buildlookList; ;
+
+    RecyclerView recyclerbuildlook2;
+    com.example.beauty.adapters.fashion.adapter_fashion_buildlook2 adapter_fashion_buildlook2;
+    List<model_fashion_buildlook2> buildlookList2; ;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -129,6 +141,46 @@ public class fashionpage extends Fragment {
         adapter_fashion_buildlook=new adapter_fashion_buildlook(buildlookList,getContext());
         recyclerbuildlook.setAdapter(adapter_fashion_buildlook);
 
+//buildlook2
+
+//        recyclerbuildlook2=view.findViewById(R.id.buildlookrecycler2);
+//        recyclerbuildlook2.hasFixedSize();
+//
+//        buildlookList2=new ArrayList<>();
+//
+//        buildlookList2.add(new model_fashion_buildlook2("https://picsum.photos/seed/picsum/200/300","kurta"));
+//        buildlookList2.add(new model_fashion_buildlook2("https://picsum.photos/seed/picsum/200/300","kurta"));
+//        buildlookList2.add(new model_fashion_buildlook2("https://picsum.photos/seed/picsum/200/300","kurta"));
+//        buildlookList2.add(new model_fashion_buildlook2("https://picsum.photos/seed/picsum/200/300","kurta"));
+//
+//        recyclerbuildlook2.setLayoutManager(new LinearLayoutManager(getContext()));
+//        adapter_fashion_buildlook2=new adapter_fashion_buildlook2(buildlookList2,getContext());
+//        recyclerbuildlook2.setAdapter(adapter_fashion_buildlook2);
+
+
+// postproducts
+
+
+        recyclerpostproducts=view.findViewById(R.id.postproductsrecycler);
+        recyclerpostproducts.hasFixedSize();
+
+        listfashionPost=new ArrayList<>();
+
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+        listfashionPost.add(new model_fashion_post("https://picsum.photos/seed/picsum/200/300"));
+
+
+        recyclerpostproducts.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        adapter_fashion_post=new adapter_fashion_post(listfashionPost,getContext());
+        recyclerpostproducts.setAdapter(adapter_fashion_post);
 
         return view;
     }

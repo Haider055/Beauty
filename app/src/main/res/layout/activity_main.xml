@@ -9,7 +9,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="#d4e3ce"
+        android:background="@color/toolbarcolor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -22,19 +22,17 @@
                 android:layout_height="60dp">
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profileImage"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:layout_marginRight="16dp"
-                    android:src="@drawable/backgroundoflogin"
-                    app:civ_border_color="#000"
-                    app:civ_border_width="2dp" />
+                    android:src="@drawable/backgroundoflogin"/>
                 <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="6dp"
+                    android:layout_marginBottom="10dp"
                     android:src="@drawable/ic_online" />
             </RelativeLayout>
 
@@ -83,7 +81,17 @@
 
     </FrameLayout>
 
-    <com.zagori.bottomnavbar.BottomNavBar
+<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--            app:menu="@menu/bottom_nav_menu"-->
+<!--            android:background="@color/color_bottom_nav"-->
+<!--            android:id="@+id/bottomnav"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+
+        <com.zagori.bottomnavbar.BottomNavBar
 
         android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
@@ -118,6 +126,5 @@
 <!--        app:mbn_rippleColor="#2f424242"-->
 <!--        app:mbn_selectedIconColor="#3c415e"-->
 <!--        app:mbn_shadowColor="#1f212121"/>-->
-
 
 </RelativeLayout>
