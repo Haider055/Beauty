@@ -39,16 +39,16 @@ public class adapter_tipsbycategory extends RecyclerView.Adapter<adapter_tipsbyc
     public void onBindViewHolder(@NonNull adapter_tipsbycategory.holder holder, int position) {
 
         if (position%4==0){
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#fc977b"));
-        }
-        else if (position%4==1){
-            holder.cardView.setCardBackgroundColor(Color.parseColor("#fabd03"));
-        }
-        else if (position%4==2){
             holder.cardView.setCardBackgroundColor(Color.parseColor("#c27fff"));
         }
-        else {
+        else if (position%4==1){
             holder.cardView.setCardBackgroundColor(Color.parseColor("#48d2d2"));
+        }
+        else if (position%4==2){
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#fc977b"));
+        }
+        else {
+            holder.cardView.setCardBackgroundColor(Color.parseColor("#fabc05"));
         }
 
         Glide.with(context).load(list.get(position).getImage()).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).into(holder.image);
@@ -74,7 +74,5 @@ public class adapter_tipsbycategory extends RecyclerView.Adapter<adapter_tipsbyc
             image=itemView.findViewById(R.id.image);
             textView=itemView.findViewById(R.id.name);
         }
-
     }
-
 }

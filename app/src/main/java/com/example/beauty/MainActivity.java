@@ -18,6 +18,7 @@ import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.beauty.fragments.fashionpage;
 import com.example.beauty.fragments.homepage;
 import com.example.beauty.fragments.offers;
+import com.example.beauty.fragments.search;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.zagori.bottomnavbar.BottomNavBar;
 
@@ -37,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         bottomNavBar=findViewById(R.id.bottom_nav_view);
-
         title=findViewById(R.id.title);
 
         homepage homepages = (homepage) getSupportFragmentManager().findFragmentByTag(hometag);
@@ -63,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 if (menuItem.getItemId()==R.id.search){
+                    search search = new search();
+                    FragmentManager fragmentManagerpro = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransactionpro = fragmentManagerpro.beginTransaction();
+                    fragmentTransactionpro.replace(R.id.frame, search);
+                    fragmentTransactionpro.commit();
+
+                    title.setText("Search");
+
                 }
                 if (menuItem.getItemId()==R.id.home){
                     homepage homepage = new homepage();
@@ -70,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransactionpro = fragmentManagerpro.beginTransaction();
                     fragmentTransactionpro.replace(R.id.frame, homepage);
                     fragmentTransactionpro.commit();
+
+                    title.setText("Home page");
+
                 }
                 if (menuItem.getItemId()==R.id.cart){
                     fashionpage fashionpage = new fashionpage();
@@ -80,23 +90,16 @@ public class MainActivity extends AppCompatActivity {
 
                     title.setText("Fashion");
                 }
-
                 if (menuItem.getItemId()==R.id.favorite){
                     offers offers = new offers();
                     FragmentManager fragmentManagerpro = getSupportFragmentManager();
                     FragmentTransaction fragmentTransactionpro = fragmentManagerpro.beginTransaction();
                     fragmentTransactionpro.replace(R.id.frame, offers);
                     fragmentTransactionpro.commit();
-
                     title.setText("Offers");
-
                 }
-
                 return true;
             }
         });
-
-
     }
-
 }
