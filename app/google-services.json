@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "234205795854",
+    "project_id": "beauty-app-mayor",
+    "storage_bucket": "beauty-app-mayor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234205795854:android:8f8569dbaf1e2de9250e5f",
+        "android_client_info": {
+          "package_name": "com.example.beauty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234205795854-1hlsh4msv0u0ghj8m0aekiearp6d2u9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDphJ1GkM1LhzMEr6mNEX6mF9MLQ2wutxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234205795854-1hlsh4msv0u0ghj8m0aekiearp6d2u9u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
